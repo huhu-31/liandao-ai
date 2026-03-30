@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>极智 AI 员工 - 企业智能化转型的得力助手</title>
+    <title>���� AI Ա�� - ��ҵ���ܻ�ת�͵ĵ�������</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -34,3 +34,1011 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover { transform: scale(1.05); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bg-gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        .hero-title span {
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        .btn-primary {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .features { padding: 8rem 2rem; background: var(--bg-white); }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary-color);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .feature-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            transition: gap 0.3s ease;
+        }
+        .advantages {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .advantages .section-tag { background: rgba(255, 255, 255, 0.2); color: white; }
+        .advantages .section-title { color: white; }
+        .advantages .section-subtitle { color: rgba(255, 255, 255, 0.9); }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .advantage-item { text-align: center; padding: 2rem; }
+        .advantage-number {
+            font-size: 4rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .advantage-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .advantage-description { opacity: 0.9; line-height: 1.8; }
+        .scenarios { padding: 8rem 2rem; background: var(--bg-light); }
+        .scenarios-container { max-width: 1200px; margin: 0 auto; }
+        .scenario-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .scenario-tab {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--primary-color);
+        }
+        .scenario-tab.active, .scenario-tab:hover {
+            background: var(--bg-gradient);
+            color: white;
+            border-color: transparent;
+        }
+        .scenario-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .scenario-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .scenario-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary-color); }
+        .scenario-list { list-style: none; }
+        .scenario-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--bg-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .scenario-list li:last-child { border-bottom: none; }
+        .scenario-list li::before {
+            content: '?';
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .testimonials { padding: 8rem 2rem; background: var(--bg-white); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-rating { color: #fbbf24; font-size: 1.5rem; margin-bottom: 1rem; }
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .testimonial-info h4 { font-weight: 700; margin-bottom: 0.25rem; }
+        .testimonial-info p { color: var(--text-light); font-size: 0.9rem; }
+        .cta-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+        .cta-content { max-width: 800px; margin: 0 auto; }
+        .cta-title { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .cta-subtitle { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; }
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: white; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 300px; }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        .modal-close:hover { color: var(--text-primary); }
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .modal-body { line-height: 1.8; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <!-- ������ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToSection('hero')">���� AI</div>
+            <ul class="nav-links">
+                <li><a href="#features" onclick="scrollToSection('features')">��������</a></li>
+                <li><a href="#advantages" onclick="scrollToSection('advantages')">��������</a></li>
+                <li><a href="#scenarios" onclick="scrollToSection('scenarios')">Ӧ�ó���</a></li>
+                <li><a href="#testimonials" onclick="scrollToSection('testimonials')">�û�����</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta" onclick="openModal('contactModal')">��������</a>
+        </div>
+    </nav>
+
+    <!-- Ӣ������ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-badge">?? �й��׸�������ص� AI Ա��ϵͳ</span>
+            <h1 class="hero-title">�ͷ�����������<span>���� AI</span>��ʼ</h1>
+            <p class="hero-subtitle">��ҵ����������Ա����Ϊ����ҵ��ע��ȫ�»������������������ɱ�������ʵ�����ۻ�͡����ݴ������ͻ�����ȫ�������ܻ���</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openModal('contactModal')">�������</button>
+                <button class="btn-secondary" onclick="scrollToSection('features')">�˽����</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- �������� -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">��������</span>
+            <h2 class="section-title">ȫ��λ���ܻ��������</h2>
+            <p class="section-subtitle">�����Զ���Ӫ�������ܿͷ������ݴ�����һ�����ҵ�� AI ����</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" onclick="openFeatureModal('wechat')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">΢���Զ�������</h3>
+                <p class="feature-description">���׸ı�����΢��Ӫ����ʽ���޷�ӹ�΢�ŶԻ�����׼�ش�ͻ���ѯ�������ۺ����⣬�Զ����Ӻ��Ѳ�ά����ϵ��</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('creation')">
+                <div class="feature-icon">?</div>
+                <h3 class="feature-title">���ܴ���</h3>
+                <p class="feature-description">���ݴ�����δ��˸�Ч���Զ���������������������������ģ���д����ƽ̨���Ե������İ���</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('publish')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">�ۺϷ���</h3>
+                <p class="feature-description">������Ķ�ƽ̨�������̡�һ��ͬ���������ݵ����֡�������С���顢��Ƶ�ŵ�����ƽ̨��</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('moments')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">����Ȧ��ϸ����Ӫ</h3>
+                <p class="feature-description">����߼�ֵ˽�������ء��Զ���������������Ȧ���ݣ�ģ����ʵ�˹�����������ͨ������ȦӪ����</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('remote')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">Զ���ֻ��ٿ�</h3>
+                <p class="feature-description">���˫�֣��� AI ��Ϊ�����������֡�ֻ�����ֻ��Ϸ�������ָ�����Զ�̿��Ƶ�����ɸ��Ӳ�����</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('personalized')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">ǧ��ǧ��Ⱥ��</h3>
+                <p class="feature-description">Ϊÿλ�ͻ���������ר�����ݣ������������Ӧ��ת������ÿһ�ζԻ��������¶����ֵ��</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('acquisition')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">�Զ����</h3>
+                <p class="feature-description">����ʶ��ת��Ǳ�ڿͻ�������Զ��ع⹦�ܣ��ڷ���Ŀ��ͻ��������������ܶԻ����Զ����Ӻ��ѡ�</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('workflow')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">�Զ�������</h3>
+                <p class="feature-description">����ȫ�Զ�Ӫ���ջ���ֻ��һ�����ã������Զ�������ݴ�������ƽ̨�����������ع⡢��׼��͡�</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+            <div class="feature-card" onclick="openFeatureModal('service')">
+                <div class="feature-icon">??</div>
+                <h3 class="feature-title">���ܿͷ�</h3>
+                <p class="feature-description">7*24 Сʱ�Զ��ظ��ͻ���ѯ�����ܴ����ۺ����⣬�ṩ���Ի��������顣֧�ֶ����ԡ��ೡ���Ի���</p>
+                <span class="feature-link">�˽����� ��</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- �������� -->
+    <section class="advantages" id="advantages">
+        <div class="section-header">
+            <span class="section-tag">��������</span>
+            <h2 class="section-title">Ϊʲôѡ���� AI��</h2>
+            <p class="section-subtitle">�й��׸��������á��������õ� AI Ա��ϵͳ</p>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-number">1</div>
+                <h3 class="advantage-title">��λ�� AI Ա��</h3>
+                <p class="advantage-description">����"�Ựʽ AI"�������ܽӹ����������λ�� AI Ա��������������ȡ�ִ�й��̡�����㱨��ȫ���� AI ��ɡ�</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-number">2</div>
+                <h3 class="advantage-title">�ֻ��������Ƶ���</h3>
+                <p class="advantage-description">��һ��֧��"�ֻ��������Ƶ��԰칫"������ִ��ƽ̨��ֻ��һ���ֻ�������΢��˵��������Զ�̻��ѵ��Բ��������</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-number">3</div>
+                <h3 class="advantage-title">ȫ���̱ջ�</h3>
+                <p class="advantage-description">�ӽ���ָ������ɹ���ȫ�� AI ��ɡ������˹����������AI Ա���ڵ����������������񣬲���Ҫ�˶��ŵ㡣</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-number">4</div>
+                <h3 class="advantage-title">��ҵ���ȶ���</h3>
+                <p class="advantage-description">�Ѳ��������ݵ��̡����ࡢ֪ʶ IP �͹�˾����ʵ B �˳��������й��׸�������صĿ����õ� AI Ա��ϵͳ��</p>
+            </div>
+        </div>
+    </section>
+    <!-- Ӧ�ó��� -->
+    <section class="scenarios" id="scenarios">
+        <div class="section-header">
+            <span class="section-tag">Ӧ�ó���</span>
+            <h2 class="section-title">�ʺ���Щ��ҵ��</h2>
+            <p class="section-subtitle">���� AI Ա��������������Ա�Ĳ�Ʒ���������������ȷ��λ�������ҵ��</p>
+        </div>
+        <div class="scenarios-container">
+            <div class="scenario-tabs">
+                <div class="scenario-tab active" onclick="switchScenario('short-video')">����Ƶ�͹�˾</div>
+                <div class="scenario-tab" onclick="switchScenario('private-domain')">��Ⱥ + ˽���͹�˾</div>
+                <div class="scenario-tab" onclick="switchScenario('education')">����/֪ʶ����/SaaS</div>
+            </div>
+            <div class="scenario-content active" id="short-video">
+                <h3 class="scenario-title">����Ƶ�͹�˾</h3>
+                <ul class="scenario-list">
+                    <li>ÿ��Ҫ�����������ݡ����İ����������ݵ���Ӫ��λ</li>
+                    <li>�Զ������Ƶ�������İ���������ƽ̨����</li>
+                    <li>���ܷ������ݣ��Ż�����ʱ�����</li>
+                    <li>һ�˹�������˺ţ�Ч������ 5 ������</li>
+                </ul>
+            </div>
+            <div class="scenario-content" id="private-domain">
+                <h3 class="scenario-title">��Ⱥ + ˽���͹�˾</h3>
+                <ul class="scenario-list">
+                    <li>��Ҫ��΢�ŽӴ��ͻ��������ϡ��Զ�������ά���Ͽͻ�</li>
+                    <li>�Զ�������Ȧ��Ӫ�����������˯�ͻ�</li>
+                    <li>���ܱ�ǩ��������׼���͸��Ի�����</li>
+                    <li>7*24 Сʱ���ߣ��������κ����ۻ���</li>
+                </ul>
+            </div>
+            <div class="scenario-content" id="education">
+                <h3 class="scenario-title">����/֪ʶ����/SaaS������</h3>
+                <ul class="scenario-list">
+                    <li>��Ҫ���ڴ���ͻ����������û������ǩ��Ⱥ��</li>
+                    <li>�Զ����γ��ƹ��ѧԱ����</li>
+                    <li>���ܽ�𳣼����⣬���Ϳͷ��ɱ�</li>
+                    <li>�����������û��������ڹ���</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- �û����� -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <span class="section-tag">�û�����</span>
+            <h2 class="section-title">���Ƕ����ü��� AI</h2>
+            <p class="section-subtitle">����ʹ�ü��� AI �����ʵ����</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">������</div>
+                <p class="testimonial-text">"���� AI ���׸ı������ǵ�Ӫ����ʽ����ǰ��Ҫ 5 ���˵��ŶӲ�����ɵĹ���������ֻ��Ҫ 1 ���˾������ɹ������ر����Զ���͹��ܣ������ǵ��������������� 300%��ת����Ҳ������ 50%��"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">��</div>
+                    <div class="testimonial-info">
+                        <h4>������</h4>
+                        <p>ĳ���̹�˾ CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">������</div>
+                <p class="testimonial-text">"���ݴ�������̫ǿ���ˣ���ǰ����ÿ��Ҫ������ʱ������Ƶ�������İ������ϣ����ڼ��� AI �����Զ������Щ�����������������˹����Ļ�Ҫ�á�����Ч������������ 5 ����"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">��</div>
+                    <div class="testimonial-info">
+                        <h4>��Ůʿ</h4>
+                        <p>ĳ MCN ������Ӫ�ܼ�</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">������</div>
+                <p class="testimonial-text">"ǧ��ǧ��Ⱥ�����������ǵ�Ӫ��Ч�������ʵķ�Ծ��ÿ���ͻ������յ����Ի������ݣ�ת���������� 80%�������Զ�����������������Ӫ�����̱�÷ǳ�˳������ʡ�˴��������ɱ���"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">��</div>
+                    <div class="testimonial-info">
+                        <h4>������</h4>
+                        <p>ĳ�����Ƽ���˾��ʼ��</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">������</div>
+                <p class="testimonial-text">"Զ���ֻ��ٿع���̫ʵ���ˣ��Ҿ���������ڿ�����ʱͨ���ֻ��鿴���ݡ������Ŷӡ������ͻ����⡣���� AI �����ҵĵ������֣��ù�����������ָ�Ч��"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">��</div>
+                    <div class="testimonial-info">
+                        <h4>��Ůʿ</h4>
+                        <p>ĳ SaaS ��ҵ���۸���</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA ���� -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2 class="cta-title">׼�����ͷ�������ҵ����������</h2>
+            <p class="cta-subtitle">���� AI Ա����׼����Ϊ���ṩȫ������������Ƹ����ѵ�͹�����ֻ��һ�β�������ӵ�и�Ч�ܵ�����Ա���Ŷӡ�</p>
+            <button class="btn-primary" onclick="openModal('contactModal')">�����������</button>
+        </div>
+    </section>
+
+    <!-- ҳ�� -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>���� AI</h3>
+                <p style="opacity: 0.8; line-height: 1.8;">��ҵ����������Ա����Ϊ����ҵ��ע��ȫ�»������� AI ��Ϊ������������֣�24 Сʱ��֪ƣ���Ϊ��ҵ�����ֵ��</p>
+            </div>
+            <div class="footer-section">
+                <h3>��Ʒ����</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="openFeatureModal('wechat'); return false;">΢���Զ�������</a></li>
+                    <li><a href="#" onclick="openFeatureModal('creation'); return false;">���ܴ���</a></li>
+                    <li><a href="#" onclick="openFeatureModal('publish'); return false;">�ۺϷ���</a></li>
+                    <li><a href="#" onclick="openFeatureModal('workflow'); return false;">�Զ�������</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>�������</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="switchScenario('short-video'); scrollToSection('scenarios'); return false;">����Ƶ��Ӫ</a></li>
+                    <li><a href="#" onclick="switchScenario('private-domain'); scrollToSection('scenarios'); return false;">˽������</a></li>
+                    <li><a href="#" onclick="switchScenario('education'); scrollToSection('scenarios'); return false;">������ѵ</a></li>
+                    <li><a href="#" onclick="switchScenario('education'); scrollToSection('scenarios'); return false;">SaaS����</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>��ϵ����</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="openModal('contactModal'); return false;">�������</a></li>
+                    <li><a href="#" onclick="openModal('contactModal'); return false;">����֧��</a></li>
+                    <li><a href="#" onclick="openModal('contactModal'); return false;">��Ʒ��ѯ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ���� AI Ա����All rights reserved. �ɶ�����Ƽ����޹�˾</p>
+        </div>
+    </footer>
+    <!-- ��ϵģ̬�� -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('contactModal')">&times;</span>
+            <h2 class="modal-title">�����������</h2>
+            <div class="modal-body">
+                <p style="margin-bottom: 2rem;">��л���Լ��� AI �Ĺ�ע������д������Ϣ�����ǵ�רҵ���ʽ��� 24 Сʱ��������ϵ��Ϊ������������úͲ�Ʒչʾ��</p>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">����</label>
+                        <input type="text" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem;" placeholder="��������������">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">��˾����</label>
+                        <input type="text" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem;" placeholder="�����빫˾����">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">��ϵ�绰</label>
+                        <input type="tel" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem;" placeholder="��������ϵ�绰">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">΢��/����</label>
+                        <input type="text" required style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem;" placeholder="������΢�Ż������ַ">
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">��������</label>
+                        <textarea rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem; resize: vertical;" placeholder="����������������ʹ�ó���"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">�ύ����</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ��������ģ̬�� -->
+    <div class="modal" id="featureModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('featureModal')">&times;</span>
+            <h2 class="modal-title" id="featureModalTitle">��������</h2>
+            <div class="modal-body" id="featureModalBody">
+                <!-- ��̬������� -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ƽ������
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        }
+
+        // ģ̬�����
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ���ģ̬���ⲿ�ر�
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // �����л�
+        function switchScenario(scenarioId) {
+            // �Ƴ����м���״̬
+            document.querySelectorAll('.scenario-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.scenario-content').forEach(content => content.classList.remove('active'));
+            
+            // ���Ӽ���״̬
+            event.target.classList.add('active');
+            document.getElementById(scenarioId).classList.add('active');
+        }
+
+        // ������������
+        const featureDetails = {
+            wechat: {
+                title: '΢���Զ�������',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>���׸ı�����΢��Ӫ����ʽ</strong></p>
+                    <p style="margin-bottom: 1.5rem;">���� AI ���޷�ӹ�΢�ŶԻ�����׼�ش�ͻ���ѯ�������ۺ����⣬�Զ����Ӻ��Ѳ�ά����ϵ��ͨ�����ѧϰ�㷨��Ϊÿλ�ͻ��ṩǧ��ǧ��ĸ��Ի��������ͣ��������ת���ʺͿͻ�����ȡ�</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ���ܶԻ�������ͻ���ͼ���ṩ��׼�ش�</li>
+                        <li>? �Զ��Ӻ��ѣ���������Ǳ�ڿͻ�������������ϵ</li>
+                        <li>? �ۺ������Զ����������ۺ����⣬�����ͻ������</li>
+                        <li>? ��ϵά����������ͻ����������ֻ�Ծ��</li>
+                        <li>? ���Ի����ͣ����ݿͻ���ǩ����Ȥ�����Ͷ��ƻ�����</li>
+                        <li>? �����Զ������ӽӴ����ɽ���ȫ�����Զ���</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>������������ 300%��ת�������� 50%���ͷ�Ч������ 5 ��</p>
+                `
+            },
+            creation: {
+                title: '���ܴ���',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>���ݴ�����δ��˸�Ч</strong></p>
+                    <p style="margin-bottom: 1.5rem;">�Զ���������������������������ģ���д����ƽ̨���Ե������İ������� AI ���ڴ����ݷ������˽��ƽ̨�������ƺ�����ϲ�ã�ȷ�����������ݼȷ���Ʒ�Ƶ��ԣ���������������</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ��Ƶ�Զ�����������ʶ�𾫲�Ƭ�Σ��Զ����ɳ�Ƭ</li>
+                        <li>? �İ��������ɣ����ݲ�Ʒ�ص��Ŀ�����ڣ�������ת���İ�</li>
+                        <li>? �����Ż����������������ɣ�������������</li>
+                        <li>? �������䣺֧����ʽ����Ĭ������ȶ����ķ�</li>
+                        <li>? �ȵ�׷�٣�ʵʱ��׽�ȵ㣬���������������</li>
+                        <li>? A/B ���ԣ��Զ����ɶ���汾���������ŷ���</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>��������Ч������ 5 �������������� 80%</p>
+                `
+            },
+            publish: {
+                title: '�ۺϷ���',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>������Ķ�ƽ̨��������</strong></p>
+                    <p style="margin-bottom: 1.5rem;">һ��ͬ���������ݵ����֡�������С���顢��Ƶ�ŵ�����ƽ̨��ȫ�渲�Ǹ���������ء����ܵ�����ƽ̨���ݸ�ʽ��ȷ�����չʾЧ����</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ��ƽ̨ͬ����һ�β�����ȫ������</li>
+                        <li>? ��ʽ����Ӧ�����ݸ�ƽ̨�����Զ��������ݸ�ʽ</li>
+                        <li>? ��ʱ������������ѷ���ʱ�䣬�Զ�ִ��</li>
+                        <li>? �˺Ź�����ͳһ�������ƽ̨�˺�</li>
+                        <li>? ���ݻ��ܣ����в鿴��ƽ̨����Ч��</li>
+                        <li>? Υ���⣺����ǰ�Զ�������дʺ�Υ������</li>
+                    </ul>
+                    <p><strong>֧��ƽ̨��</strong>���������֡�С���顢��Ƶ�š�B վ��΢����</p>
+                `
+            },
+            moments: {
+                title: '����Ȧ��ϸ����Ӫ',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>����߼�ֵ˽��������</strong></p>
+                    <p style="margin-bottom: 1.5rem;">�Զ���������������Ȧ���ݣ�ģ����ʵ�˹�����������ͨ������ȦӪ����֧��ͼ�ġ���Ƶ�ȶ�����ʽ�����ݿͻ���ǩ��׼չʾ���ݡ�</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ���ݹ滮���Զ���������Ȧ��������</li>
+                        <li>? ����ʽ֧�֣�ͼ�ġ���Ƶ�����ӵȶ�����ʽ</li>
+                        <li>? ��׼չʾ�����ݿͻ���ǩ����չʾ��ͬ����</li>
+                        <li>? ���ܻ������Զ����ޡ����ۺ�������Ȧ</li>
+                        <li>? ���ݷ�����׷��ÿ������Ȧ�Ļ���Ч��</li>
+                        <li>? A/B ���ԣ����Բ�ͬ�������͵�ת��Ч��</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>����Ȧ���������� 200%������������ 60%</p>
+                `
+            },
+            remote: {
+                title: 'Զ���ֻ��ٿ�',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>���˫�֣��� AI ��Ϊ������������</strong></p>
+                    <p style="margin-bottom: 1.5rem;">ֻ�����ֻ��Ϸ�������ָ�����Զ�̿��Ƶ��ԣ��ü��� AI Ա���Զ���ɸ��Ӳ��������������ںδ����������ɹ���ҵ��</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ����ָ�ͨ��΢�����������´�����</li>
+                        <li>? Զ�̻��ѣ���ʱ��ػ��ѵ���ִ������</li>
+                        <li>? ���Ȳ�ѯ��ʵʱ�鿴����ִ�н���</li>
+                        <li>? ������ͣ�������ɺ��Զ����ͽ��</li>
+                        <li>? �쳣�������������⼰ʱ֪ͨ�˹�����</li>
+                        <li>? Ȩ�޹������ּ���Ȩ�����ϰ�ȫ</li>
+                    </ul>
+                    <p><strong>���ͳ�����</strong>�ϰ����ʱ�´�ָ�������������ͻ���������Զ������</p>
+                `
+            },
+            personalized: {
+                title: 'ǧ��ǧ��Ⱥ��',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>��������Ϣ��û��Ⱥ���ĺ�����</strong></p>
+                    <p style="margin-bottom: 1.5rem;">Ϊÿλ�ͻ���������ר�����ݣ������������Ӧ��ת������ÿһ�ζԻ��������¶����ֵ��</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? �ͻ����񣺻�����ʷ��Ϊ���������ͻ�����</li>
+                        <li>? ���ܷ�Ⱥ���Զ����ͻ���Ϊ��ͬȺ��</li>
+                        <li>? ���ݶ��ƣ�Ϊÿ��Ⱥ���������˶�������</li>
+                        <li>? ʱ�����գ����ݿͻ���Ծʱ��ѡ����ѷ���ʱ��</li>
+                        <li>? ��з����������ͻ�������������ͨ����</li>
+                        <li>? Ч��׷�٣�ʵʱ���ÿ����Ϣ���Ķ��ͻظ����</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>��Ϣ�������� 150%���ظ������� 200%</p>
+                `
+            },
+            acquisition: {
+                title: '�Զ����',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>����ʶ��ת��Ǳ�ڿͻ�</strong></p>
+                    <p style="margin-bottom: 1.5rem;">����Զ��ع⹦�ܣ��ڷ���Ŀ��ͻ��������������ܶԻ����Զ����Ӻ��ѣ�����������ϵ��</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? Ŀ��ʶ�𣺻���Ԥ�������Զ�ʶ��Ǳ�ڿͻ�</li>
+                        <li>? ���ܴ���Զ����͸��Ի����״νӴ���Ϣ</li>
+                        <li>? �Զ��ӷۣ���������Ŀ��ͻ�Ϊ����</li>
+                        <li>? �����⣺���ö��ֳ����ĸ�ת������</li>
+                        <li>? �������ԣ����ݿͻ������Զ���������Ƶ��</li>
+                        <li>? �������֣��Զ������������������ȸ����߼�ֵ�ͻ�</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>��ͳɱ����� 70%������ת�������� 100%</p>
+                `
+            },
+            workflow: {
+                title: '�Զ�������',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>����ȫ�Զ�Ӫ���ջ�</strong></p>
+                    <p style="margin-bottom: 1.5rem;">ֻ��һ�����ã������Զ�������ݴ�������ƽ̨�����������ع⡢��׼��͡����۶Խӵ�ȫ���̹�����</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? ���ӻ����ţ���קʽ����������</li>
+                        <li>? ������֧�����������Զ�ѡ��ִ��·��</li>
+                        <li>? ��ʱ���������ù̶�ʱ���������ִ��</li>
+                        <li>? �¼������������ض��¼��Զ�����������</li>
+                        <li>? ������ת�������������Զ�����</li>
+                        <li>? �쳣������Ԥ���쳣�����������</li>
+                    </ul>
+                    <p><strong>���͹�������</strong>���ݴ�������ƽ̨�������ռ��������Զ�������ת���ɽ����ۺ����</p>
+                `
+            },
+            service: {
+                title: '���ܿͷ�',
+                content: `
+                    <p style="margin-bottom: 1.5rem;"><strong>7*24 Сʱ�Զ��ظ��ͻ���ѯ</strong></p>
+                    <p style="margin-bottom: 1.5rem;">���ܴ����ۺ����⣬�ṩ���Ի��������顣֧�ֶ����ԡ��ೡ���Ի����ÿͻ��������Ч�������ġ�</p>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary-color);">����������</h4>
+                    <ul style="line-height: 2; margin-bottom: 1.5rem;">
+                        <li>? �����ʴ�׼ȷ���Ⲣ�ش�ͻ�����</li>
+                        <li>? ���ֶԻ���֧�ָ��ӵĶԻ�����</li>
+                        <li>? ֪ʶ�⣺�Զ�����ҵר��֪ʶ��</li>
+                        <li>? ����ϵͳ�����������Զ���������ת�˹�</li>
+                        <li>? ����ʶ��ʶ��ͻ������������ظ�����</li>
+                        <li>? �����ԣ�֧����Ӣ�ĵȶ����Է���</li>
+                    </ul>
+                    <p><strong>Ч��������</strong>�ͷ���Ӧʱ���������뼶���ͻ���������� 40%</p>
+                `
+            }
+        };
+
+        // �򿪹�������ģ̬��
+        function openFeatureModal(featureKey) {
+            const feature = featureDetails[featureKey];
+            if (feature) {
+                document.getElementById('featureModalTitle').textContent = feature.title;
+                document.getElementById('featureModalBody').innerHTML = feature.content;
+                openModal('featureModal');
+            }
+        }
+
+        // �����ύ
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('��л�������룡���ǵ�רҵ���ʽ��� 24 Сʱ��������ϵ��');
+            closeModal('contactModal');
+            document.getElementById('contactForm').reset();
+        }
+
+        // ����������Ч��
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
