@@ -18,6 +18,9 @@
             --bg-light: #f9fafb;
             --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -224,39 +227,58 @@
         }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
         .feature-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 8px 40px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            border: 2px solid transparent;
+            border: 2px solid rgba(99, 102, 241, 0.08);
             position: relative;
             overflow: hidden;
         }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
-            border-color: var(--primary-color);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 24px 80px rgba(99, 102, 241, 0.25), 0 8px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(99, 102, 241, 0.3);
         }
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: var(--bg-gradient);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
             position: relative;
             z-index: 1;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.05);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
         }
         .feature-title {
             font-size: 1.5rem;
@@ -553,8 +575,8 @@
                 <h3 class="feature-title">聚合发布</h3>
                 <p class="feature-description">告别繁琐的多平台发布流程。一键同步发布内容到快手、抖音、小红书、视频号等主流平台。</p>
                 <span class="feature-link">了解详情 →</span>
-            </div></div>
-            <div class="feature-card" onclick="openFeatureModal('moments')">
+            </div>
+            <div class="feature-card" onclick="openFeatureModal(\'moments\')">
                 <div class="feature-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1.5" fill="#667eea"/></svg></div>
                 <h3 class="feature-title">朋友圈精细化运营</h3>
                 <p class="feature-description">打造高价值私域流量池。自动发布高质量朋友圈内容，模拟真实人工互动，持续通过朋友圈营销。</p>
