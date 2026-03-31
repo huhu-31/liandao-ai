@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -376,10 +376,15 @@
         }
         .scenario-list li:last-child { border-bottom: none; }
         .scenario-list li::before {
-            content: '?';
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.2rem;
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
         }
         .testimonials { padding: 8rem 2rem; background: var(--bg-white); }
         .testimonials-grid {
@@ -533,7 +538,7 @@
                 <li><a href="#scenarios" onclick="scrollToSection('scenarios')">应用场景</a></li>
                 <li><a href="#testimonials" onclick="scrollToSection('testimonials')">用户评价</a></li>
             </ul>
-            <a href="#contact" class="nav-cta" onclick="openModal('contactModal')">立即体验</a>
+            <a href="https://u.wechat.com/A1Jan31__H" class="nav-cta" target="_blank">立即预约</a>
         </div>
     </nav>
 
@@ -544,7 +549,7 @@
             <h1 class="hero-title">释放生产力，从<span>极智 AI</span>开始</h1>
             <p class="hero-subtitle">企业级智能数字员工，为您的业务注入全新活力。无需增加人力成本，即可实现销售获客、内容创作、客户服务全流程智能化。</p>
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="openModal('contactModal')">免费试用</button>
+                <a href="https://u.wechat.com/A1Jan31__H" class="btn-primary" target="_blank" style="display: inline-block; text-decoration: none;">免费预约体验</a>
                 <button class="btn-secondary" onclick="scrollToSection('features')">了解更多</button>
             </div>
         </div>
